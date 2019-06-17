@@ -1,0 +1,27 @@
+CREATE DATABASE tienda_db;
+USE tienda_db;
+CREATE TABLE PRODUCTO
+(
+	id_producto INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_p VARCHAR(50),
+	precio INT,
+	stock INT,
+	id_categoria INT,
+	FOREIGN KEY (id_categoria)
+	REFERENCES categoria(id_categoria)
+);
+CREATE TABLE DETALLE
+(
+	num_detalle INT PRIMARY KEY AUTO_INCREMENT,
+	id_producto INT,
+	FOREIGN KEY (id_producto)
+	REFERENCES producto(id_producto),
+	cantidad INT,
+	precio INT
+);
+CREATE TABLE CATEGORIA
+(
+	id_categoria INT PRIMARY KEY AUTO_INCREMENT,
+	nombre_c VARCHAR(50),
+	descripcion VARCHAR(50)
+);
