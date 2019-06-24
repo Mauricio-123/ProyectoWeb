@@ -2,7 +2,7 @@
 
     session_start();
 
-    $_SESSION["clave"]=NULL;
+    $_SESSION["id_usuario"]=NULL;
     $_SESSION["nombre"]=NULL;
 
     session_destroy();

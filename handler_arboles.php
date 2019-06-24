@@ -49,15 +49,20 @@ switch ($pag) {
 
 		break;
 }
-
-//$template->foot();
-
 }
 function helper_pag_data() {
 $pag_data=$_GET['pag'];
 return $pag_data;
 }
+if(!isset($_SESSION['id_usuario'])){
+	header("status:301 Moved Permanently");
+        header("location:http://localhost/examen2/index.html");
+	exit;
+}
+else{
 
-handler();
+	handler();
+}
+
 
 ?>
